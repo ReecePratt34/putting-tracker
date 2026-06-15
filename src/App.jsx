@@ -196,7 +196,7 @@ function GoalBar({ p, goal }) {
 
 function Card({ children, accent, style = {} }) {
   return (
-    <div style={{ background: C.card, borderRadius: 14, border: `1px solid ${accent || C.border}`, marginBottom: 10, overflow: "hidden", ...style }}>
+    <div style={{ background: C.card, borderRadius: 12, border: `1px solid ${accent || C.border}`, marginBottom: 10, overflow: "hidden", ...style }}>
       {children}
     </div>
   );
@@ -231,7 +231,7 @@ function DrillCard({ drill, data, onUpdate, expanded, onToggle, pr, goals, setGo
   const isPR = p !== null && p > 0 && pr > 0 && p >= pr;
   return (
     <Card accent={isPR ? C.orange + "60" : C.border}>
-      <div style={{ padding: "14px 16px" }}>
+      <div style={{ padding: "12px 14px" }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 10 }}>
           <div style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap" }}>
             <span style={{ fontFamily: T.display, fontSize: 18, color: C.white, letterSpacing: 1 }}>{drill.label}</span>
@@ -381,10 +381,10 @@ export default function PuttingTracker() {
   const tabs = [["log","LOG"],["week","WEEK"],["month","MONTH"],["stats","STATS"]];
 
   return (
-    <div style={{ minHeight: "100vh", background: C.navy, color: C.white, fontFamily: T.body, maxWidth: 480, margin: "0 auto", paddingBottom: 60 }}>
+    <div style={{ minHeight: "100vh", background: C.navy, color: C.white, fontFamily: T.body, width: "100%", boxSizing: "border-box", paddingBottom: 60 }}>
 
       {/* ── Header ── */}
-      <div style={{ background: `linear-gradient(160deg, #0D1B2A 0%, ${C.navy} 100%)`, borderBottom: `1px solid ${C.border}`, padding: "20px 16px 0" }}>
+      <div style={{ background: `linear-gradient(160deg, #0D1B2A 0%, ${C.navy} 100%)`, borderBottom: `1px solid ${C.border}`, padding: "16px 12px 0" }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16 }}>
           <div>
             <div style={{ fontFamily: T.display, fontSize: 32, color: C.white, letterSpacing: 3, lineHeight: 1 }}>PUTT LOG</div>
@@ -422,7 +422,7 @@ export default function PuttingTracker() {
           LOG
       ════════════════════════════════════════ */}
       {view === "log" && (
-        <div style={{ padding: "0 16px" }}>
+        <div style={{ padding: "0 10px" }}>
           {/* Date nav */}
           <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "16px 0 14px", borderBottom: `1px solid ${C.border}` }}>
             <NavBtn onClick={() => shiftDate(-1)}>‹</NavBtn>
@@ -459,7 +459,7 @@ export default function PuttingTracker() {
               const isExp = expanded === "finisher";
               return (
                 <Card accent={C.orange + "50"}>
-                  <div style={{ padding: "14px 16px" }}>
+                  <div style={{ padding: "12px 14px" }}>
                     <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 10 }}>
                       <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
                         <span style={{ fontFamily: T.display, fontSize: 18, color: C.orange, letterSpacing: 1 }}>5-IN-A-ROW</span>
@@ -507,7 +507,7 @@ export default function PuttingTracker() {
               </button>
             ) : (
               <Card>
-                <div style={{ padding: "14px 16px" }}>
+                <div style={{ padding: "12px 14px" }}>
                   <div style={{ fontFamily: T.display, fontSize: 18, color: C.aqua, letterSpacing: 2, marginBottom: 12 }}>NEW DRILL</div>
                   {[["label","Drill Name"],["distance","Distance (e.g. 25 FT)"],["instruction","Instructions"]].map(([f,ph])=>(
                     <Input key={f} value={newDrill[f]} onChange={e=>setNewDrill(n=>({...n,[f]:e.target.value}))} placeholder={ph} style={{fontSize:13,fontWeight:500,marginBottom:8}} />
@@ -527,7 +527,7 @@ export default function PuttingTracker() {
 
             {/* Conditions */}
             <Card>
-              <div style={{ padding: "14px 16px" }}>
+              <div style={{ padding: "12px 14px" }}>
                 <div style={{ fontFamily: T.display, fontSize: 16, color: C.white, letterSpacing: 2, marginBottom: 12 }}>CONDITIONS</div>
                 <div style={{ display:"flex", flexWrap:"wrap", gap:6, marginBottom:12 }}>
                   {CONDITIONS.map(c=><Pill key={c} active={(form.conditions||[]).includes(c)} onClick={()=>toggleCond(c)}>{c}</Pill>)}
@@ -541,7 +541,7 @@ export default function PuttingTracker() {
 
             {/* Session details */}
             <Card>
-              <div style={{ padding: "14px 16px" }}>
+              <div style={{ padding: "12px 14px" }}>
                 <div style={{ display:"flex", alignItems:"center", gap:8, marginBottom:14 }}>
                   <div style={{ fontFamily:T.display, fontSize:16, color:C.aqua, letterSpacing:2 }}>SESSION DETAILS</div>
                   <div style={{ flex:1, height:1, background:C.border }} />
@@ -569,7 +569,7 @@ export default function PuttingTracker() {
           WEEK
       ════════════════════════════════════════ */}
       {view === "week" && (
-        <div style={{ padding: "0 16px" }}>
+        <div style={{ padding: "0 10px" }}>
           {/* Week selector */}
           <div style={{ padding:"14px 0 10px", borderBottom:`1px solid ${C.border}` }}>
             <div style={{ fontFamily:T.body, fontSize:10, fontWeight:700, color:C.muted, letterSpacing:2, marginBottom:8 }}>SELECT WEEK</div>
