@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { C, T, today } from "./shared.jsx";
-import PuttingTracker from "./PuttingTracker.jsx";
+import Practice from "./Practice.jsx";
 import Rounds from "./Rounds.jsx";
 import Courses from "./Courses.jsx";
 import Bag from "./Bag.jsx";
@@ -40,7 +40,7 @@ export default function App() {
   const leagueRounds = rounds.filter(r => r.type === "league" && r.completed).length;
   const totalDiscs = discs.length;
 
-  if (screen === "practice") return <PuttingTracker onBack={() => setScreen("home")} />;
+  if (screen === "practice") return <Practice onBack={() => setScreen("home")} bagDiscs={discs} />;
   if (screen === "rounds") return <Rounds courses={courses} onBack={() => setScreen("home")} />;
   if (screen === "courses") return <Courses courses={courses} setCourses={setCourses} onBack={() => setScreen("home")} />;
   if (screen === "bag") return <Bag onBack={() => setScreen("home")} units={units} />;
