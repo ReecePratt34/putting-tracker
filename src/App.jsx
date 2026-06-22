@@ -58,9 +58,8 @@ export default function App() {
       <div style={{ background: `linear-gradient(160deg, #0D1B2A 0%, ${C.navy} 60%)`, padding: "40px 16px 24px", borderBottom: `1px solid ${C.border}` }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
           <div>
-            <div style={{ fontFamily: T.display, fontSize: 52, color: C.white, letterSpacing: 4, lineHeight: 1 }}>DISC</div>
-            <div style={{ fontFamily: T.display, fontSize: 52, color: C.aqua, letterSpacing: 4, lineHeight: 1 }}>LOG</div>
-            <div style={{ fontFamily: T.body, fontSize: 11, color: C.muted, letterSpacing: 3, marginTop: 6 }}>YOUR DISC GOLF COMPANION</div>
+            <img src="/disccircle.png" alt="DiscCircle" style={{ height: 100, width: 300, objectFit: "contain", display: "block", marginBottom: 8 }} />
+            <div style={{ fontFamily: T.body, fontSize: 12, color: C.muted, letterSpacing: 3, marginTop: 4 }}>YOUR CIRCLE. YOUR GAME.</div>
           </div>
           {/* Units toggle */}
           <div style={{ marginTop: 8 }}>
